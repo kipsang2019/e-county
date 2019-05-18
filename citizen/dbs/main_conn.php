@@ -32,7 +32,7 @@
 					header("Location: ..\signup.php");
 					exit();
 				}else{
-					$password = md5($pwd1);
+					$password = sha1($pwd1);
 
 					$sql = "INSERT INTO citizens(first_name,last_name,id_no,Phone_number,email,sub_county,username,password) 
 					VALUES('$first_name','$last_name','$id_no','$Phone_number','$email','$sub_county','$username','$password')";
@@ -56,7 +56,7 @@
 			header("Location: ..\login.php");
 			exit();
 		}else{
-		$password = md5($pwd);
+		$password = sha1($pwd);
 
 		$sql = "SELECT * FROM citizens WHERE username = '$username' AND password='$password'";
 		$result = mysqli_query($conn, $sql);

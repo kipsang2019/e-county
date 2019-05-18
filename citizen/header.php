@@ -11,12 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<h1 style="text-align: center;">County yangu system</h1>
+	<img style="width: 10%;" src="../images/COUNTY-LOGO-final.png">
 	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 			<div class="navbar-header">
 				<?php 
 				if (isset($_SESSION['id'])) {
 					echo '<ul class="navbar-nav">
 							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="">jobs</a></li>
 							<li class="nav-item"><a class="nav-link" href="project_suggestion.php">project suggestion</a></li>
 							<li class="nav-item"><a class="nav-link" href="">Permit</a></li>
 							<li class="nav-item"><a class="nav-link" href="">county projects</a></li>

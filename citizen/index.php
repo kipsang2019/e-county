@@ -3,10 +3,14 @@
 <div class="row">
 	
 		<div class="col-sm-4 profile">
-			<strong>
+			<div class="row">
+				<div class="col-sm-1 profile"></div>
+				<div class="col-sm-11 profile">
+					<strong>
 	<?php if (isset($_SESSION['msg'])): ?>
 		<?php 
 			echo $_SESSION['msg'];
+			unset($_SESSION['msg']);
 		 ?>
 	<?php endif ?><br><br>
 
@@ -44,16 +48,29 @@
 			echo $_SESSION['s_county'];
 		 ?>
 	<?php endif ?><br><br>
-</strong>
-	
-
-
 	<form action="dbs/main_conn.php" method="POST">
 		<button class="btn btn-warning" name="logout">Logout</button>
 	</form>
+</strong>
+				</div>
+			</div>
+			
+	
+
+
+	
 </div>
 		<div class="col-sm-8 right">
-			<h2>Notifications</h2>
+			
+
+			<?php 
+				$sql = "SELECT * FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";
+				$result = mysqli_query($conn, $sql);
+
+				while ($row = mysqli_fetch_assoc($result)) {
+					if (mysqli_num_rows($result) > 0) {
+						echo '
+					<h2>Notifications</h2>
 			<div class="table-responsive">
 				<table class="table table-striped table-hover custom-table table-light">
 					<thead>
@@ -63,20 +80,17 @@
 							<th>Description</th>
 						</tr>
 					</thead>
-
-			<?php 
-				$sql = "SELECT * FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";
-				$result = mysqli_query($conn, $sql);
-
-				while ($row = mysqli_fetch_assoc($result)) {
-					
-					echo '<tbody>
+					<tbody>
 						<tr>
 							<td>'.$row['project_name'].'</td>
 							<td>'.$row['location'].'</td>
 							<td>'.$row['descr'].'</td>
 						</tr>
 					</tbody>';
+					}else{
+						echo "You dont have notifications!!";
+					}
+					
 				}
 
 
