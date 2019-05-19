@@ -4,25 +4,27 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="header">
-		
+		<h1 style="text-align: center;">COUNTY YANGU</h1>
 	</div>
 <div class="row">
-	<div class="col-sm-4"></div>
-	<div class="col-sm-4">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6 login">
 		<h2>Signup</h2>
 		<form class="form-group" action="dbs/main_conn.php" method="POST">
 
 		<?php if (isset($_SESSION['msg1'])): ?>
-			<strong style="color: red;4">
-			<?php 
-				echo $_SESSION['msg1'];
-				unset($_SESSION['msg1']);
-			 ?>
+		<div class="alert alert-warning">
+			<strong>
+				<?php 
+					echo $_SESSION['msg1'];
+					unset($_SESSION['msg1']);
+				 ?>
 			</strong>
-			
+		</div>
 		<?php endif ?><br><br>
 		<input class="form-control" type="text" name="first_name" placeholder="First name"><br>
 		<input class="form-control" type="text" name="last_name" placeholder="Last name"><br>

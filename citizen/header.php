@@ -13,7 +13,7 @@
 <body>
 	<h1 style="text-align: center;">COUNTY YANGU</h1>
 	
-	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<div class="navbar-header">
 				<?php 
 				if (isset($_SESSION['id'])) {
@@ -23,9 +23,11 @@
 							<li class="nav-item"><a class="nav-link" href="project_suggestion.php">project suggestion</a></li>
 							<li class="nav-item"><a class="nav-link" href="permits.php">Permits</a></li>
 							<li class="nav-item"><a class="nav-link" href="county_projects.php">county projects</a></li>
-							<li class="nav-item"><a class="nav-link" href="chat.php">discussions</a></li>
+							<li class="nav-item"><a class="nav-link" href="chat.php">discussions</a></li><br>
+							
 						</ul>';
 				}
+
 	 		?>
 			</div>	
 

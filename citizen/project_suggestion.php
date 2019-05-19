@@ -1,15 +1,20 @@
 <?php include 'header.php'; ?>
 <br>
 <div class="row">
-	<div class="col-sm-2"></div>
-	<div class="col-sm-6">
+	
+	<div class="col-sm-4">
 		<h2>Project suggestion</h2><br>
 			<form class="form-group" action="dbs/proj_suggestion.php" method="POST">
 				<?php if (isset($_SESSION['msg1'])): ?>
-					<?php 
-						echo $_SESSION['msg1']; 
-						unset($_SESSION['msg1']);
-					?>
+					<div class="alert alert-warning">
+						<strong>
+							<?php 
+								echo $_SESSION['msg1']; 
+								unset($_SESSION['msg1']);
+							?>
+						</strong>
+					</div>
+					
 				<?php endif ?>
 				
 				<input class="form-control" type="text" name="project_name" placeholder="Project name"><br><br>
@@ -19,7 +24,38 @@
 				<button class="btn btn-primary" name="post">Submit</button>
 			</form>
 	</div>
-	
+	<div class="col-sm-8">
+		<h2>Citizens projects notifications</h2>
+
+		<table class="table table-striped table-hover custom-table table-success">
+			<a href="pdf/citizens_projects.php">Print</a>
+			<thead>
+				<tr>
+					<th>Project name</th>
+					<th>Location</th>
+					<th>Description</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php 
+				$sql = "SELECT * FROM project_suggestion";
+				$result = mysqli_query($conn, $sql);
+
+				while ($row = mysqli_fetch_assoc($result)) {
+					echo '<tr>
+						<td>'.$row['project_name'].'</td>
+						<td>'.$row['location'].'</td>
+						<td>'.$row['descr'].'</td>
+						<td>'.$row['status'].'</td>
+					</tr>
+				</tbody>';
+				}
+				
+			 ?>
+		</table>
+	<a href="">more projects .....</a>
+	</div>
 </div>
 
 <?php include 'footer.php'; ?>

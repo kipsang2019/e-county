@@ -8,11 +8,15 @@
 				<div class="col-sm-11 profile">
 					<strong>
 	<?php if (isset($_SESSION['msg'])): ?>
-		<?php 
-			echo $_SESSION['msg'];
-			unset($_SESSION['msg']);
-		 ?>
-	<?php endif ?><br><br>
+	<div class="alert alert-success">
+		<strong>
+			<?php 
+				echo $_SESSION['f_name']." ". $_SESSION['msg'];
+				unset($_SESSION['msg']);
+			 ?>
+		</strong>
+	</div>
+	<?php endif ?><br>
 
 	<?php if (isset($_SESSION['f_name'])): ?>
 		Name:
