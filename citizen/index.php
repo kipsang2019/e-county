@@ -70,14 +70,15 @@
 				while ($row = mysqli_fetch_assoc($result)) {
 					if (mysqli_num_rows($result) > 0) {
 						echo '
-					<h2>Notifications</h2>
+					<h2>Your project suggestion</h2>
 			<div class="table-responsive">
-				<table class="table table-striped table-hover custom-table table-light">
+				<table class="table table-striped table-hover custom-table table-success">
 					<thead>
 						<tr>
 							<th>Project name</th>
 							<th>Location</th>
 							<th>Description</th>
+							<th>Status</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -85,6 +86,7 @@
 							<td>'.$row['project_name'].'</td>
 							<td>'.$row['location'].'</td>
 							<td>'.$row['descr'].'</td>
+							<td></td>
 						</tr>
 					</tbody>';
 					}else{
