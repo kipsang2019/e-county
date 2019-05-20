@@ -7,7 +7,7 @@
 			<h2 style="text-align: center;">Forum</h2><br>
 				<?php 
 
-					$sql = "SELECT citizens.first_name,citizens.sub_county,messages.msg,messages.date FROM citizens,messages WHERE citizens.citizens_id=messages.u_id";
+					$sql = "SELECT citizens.first_name,citizens.sub_county,messages.msg,messages.date FROM citizens,messages WHERE citizens.citizens_id=messages.u_id ORDER BY u_id DESC";
 					$result = mysqli_query($conn, $sql);
 
 					while ($row = mysqli_fetch_assoc($result)) {

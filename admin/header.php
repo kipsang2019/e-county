@@ -18,6 +18,7 @@
 				<?php 
 				if (isset($_SESSION['admin_id'])) {
 					echo '<ul class="navbar-nav">
+					<h2 style="color:white;float:right;">County E-gov</h2>
 							<li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="jobs.php">jobs</a></li>
 							<li class="nav-item"><a class="nav-link" href="project_suggestion.php">project suggestion</a></li>

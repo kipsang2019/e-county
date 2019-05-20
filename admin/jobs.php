@@ -55,6 +55,14 @@
 	</div>
 	<div class="col-sm-2">
 		<p>uploaded vacancies</p>
+		<?php 
+
+			$files = scandir("uploads");
+			for ($i=2; $i < count($files); $i++) { 
+				echo '<a href="uploads/'.$files[$i].'">'.$files[$i].'</a><br><br>';
+			}
+		 ?>
+		 <a href="#">More ........</a>
 	</div>
 </div>
  
