@@ -7,6 +7,17 @@
 	<div class="col-sm-5">
 		<h2>Single business permit</h2><br>
 			<form class="form-group" action="dbs/apply_permit.php" method="POST">
+
+				<?php if (isset($_SESSION['msg1'])): ?>
+				<div class="alert alert-warning">
+					<strong>
+						<?php 
+							echo $_SESSION['f_name']." ".$_SESSION['msg1'];
+							unset($_SESSION['msg1']);
+						 ?>
+					</strong>
+				</div>
+				<?php endif ?>
 				
 				<input class="form-control" type="text" name="business_name" placeholder="business name"><br>
 				<input class="form-control" type="text" name="business_type" placeholder="Business type"><br>
@@ -18,10 +29,47 @@
 				<input class="form-control" type="number" name="no_of_employees" placeholder="No of meployees"><br>
 				<input type="hidden" name="u_id" value="<?php echo $_SESSION['id'] ?>">
 				<button class="btn btn-primary" name="post">Submit</button>
+				<?php 
+					$sql = "SELECT u_id FROM permits WHERE u_id='".$_SESSION['id']."'";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+						echo '<button class="btn btn-secondary" name="print">Print</button>';
+					}
+				 ?>
+				
 			</form>
+			
 	</div>
 	<div class="col-sm-6">
-		<h2>Permit notifications</h2>
+		<h2>Permit notifications</h2>	
+
+		
+		<?php 
+
+			$query = "SELECT * FROM permits WHERE u_id='".$_SESSION['id']."'";
+			$results = mysqli_query($conn, $query);
+			while ($row = mysqli_fetch_assoc($results)) {
+				echo '
+				<table class="table table-striped table-hover custom-table table-success">
+					<thead>
+						<tr>
+							<th>Business name</th>
+							<th>Area of premise</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+				<tr>
+						<td>'.$row['business_name'].'</td>
+						<td>'.$row['premise_area'].'</td>
+						<td>'.$row['status'].'</td>
+					</tr>
+				</tbody>
+				</table>';
+			}
+
+		 ?>
+		
 	</div>
 	
 </div>

@@ -31,33 +31,36 @@
 	<div class="col-sm-4">
 		<h2>Job Notifications</h2>
 
-		<table class="table table-striped table-hover custom-table table-success">
-			<thead>
-				<tr>
-					<th>Job title</th>
-					<th>Course</th>
-					<th>Date of application</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody>
+		
 			<?php 
 				$sql = "SELECT * FROM job_application WHERE u_id='".$_SESSION['id']."'";
 				$result = mysqli_query($conn, $sql);
 
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<tr>
+					echo '
+					<table class="table table-striped table-hover custom-table table-success">
+					<thead>
+						<tr>
+							<th>Job title</th>
+							<th>Course</th>
+							<th>Date of application</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
 						<td>'.$row['job_title'].'</td>
 						<td>'.$row['course'].'</td>
 						<td>'.$row['date'].'</td>
 						<td>'.$row['status'].'</td>
 					</tr>
-				</tbody>';
+				</tbody>
+				</table>';
 				}
 				
 
 			 ?>
-		</table>
+		
 	</div>
 	<div class="col-sm-4">
 		<h2>Job posts</h2>

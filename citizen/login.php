@@ -29,7 +29,7 @@
 						 ?>
 					</strong>
 				</div>
-				<?php endif ?><br><br>
+				<?php endif ?><br>
 				<input class="form-control" type="text" name="username" placeholder="Username"><br><br>
 				<input class="form-control" type="password" name="pwd" placeholder="Password"><br><br>
 				<button class="btn btn-primary" name="login">Login</button>
