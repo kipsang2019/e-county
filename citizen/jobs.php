@@ -64,6 +64,14 @@
 	</div>
 	<div class="col-sm-4">
 		<h2>Job posts</h2>
+
+		<?php 
+
+			$files = scandir("../admin/uploads");
+			for ($i=2; $i < count($files); $i++) { 
+				echo '<a href="../admin/uploads/'.$files[$i].'">'.$files[$i].'</a><br><br>';
+			}
+		 ?>
 	</div>
 </div>
 

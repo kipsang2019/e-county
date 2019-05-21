@@ -62,7 +62,7 @@
 				<tr>
 						<td>'.$row['business_name'].'</td>
 						<td>'.$row['premise_area'].'</td>
-						<td>'.$row['status'].'</td>
+						<td style="color:red;">'.$row['status'].'</td>
 					</tr>
 				</tbody>
 				</table>';

@@ -2,3 +2,25 @@
 	background: black;
 	height: 200px;
 }
+
+.prof{
+	color: black;
+	font-style: italic;
+	background: white;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+
+.prof p{
+	padding-top: 15px;
+	padding-left: 10px;
+	margin-left: 10px;
+	color: black;
+	border-radius: 50%;
+}
+
+.chats{
+	background: silver;
+	overflow: scroll;
+	height: 500px;
+}
