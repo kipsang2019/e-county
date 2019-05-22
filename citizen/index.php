@@ -66,7 +66,28 @@
 	
 </div>
 		<div class="col-sm-8 right">
-			
+			<h2>Updates</h2>
+
+				<table class="table table-striped table-hover custom-table table-secondary">
+					<tbody>
+						<tr>
+							<th>Updates</th>
+							<th>Date</th>
+						</tr>
+				<?php 
+					$sql = "SELECT * FROM county_updates ORDER BY id DESC LIMIT 4";
+					$result = mysqli_query($conn, $sql);
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo '<tr>
+								<td>'.$row['updates'].'</td>
+								<td>'.$row['date'].'</td>
+							</tr>';
+					}
+
+				 ?>
+					</tbody>
+				</table>
+				<a href="more_updates.php">View more updates</a>
 
 			<?php 
 				$sql = "SELECT * FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";

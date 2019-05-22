@@ -4,7 +4,7 @@
  ?>
 
  <div class="row">
- 	<div class="col-sm-8">
+ 	<div class="col-sm-12">
 		<h2>Citizens projects notifications</h2>
 
 		<table class="table table-striped table-hover custom-table table-success">
@@ -16,6 +16,7 @@
 					<th>Description</th>
 					<th>Date suggested</th>
 					<th>Status</th>
+					<th>Reason</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,6 +31,7 @@
 						<td>'.$row['descr'].'</td>
 						<td>'.$row['date'].'</td>
 						<td>'.$row['status'].'</td>
+						<td>'.$row['reason'].'</td>
 					</tr>
 				</tbody>';
 				}

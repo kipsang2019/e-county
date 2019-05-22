@@ -36,6 +36,7 @@
 					<th>Description</th>
 					<th>Date suggested</th>
 					<th>Status</th>
+					<th>Reason</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -50,6 +51,7 @@
 						<td>'.$row['descr'].'</td>
 						<td>'.$row['date'].'</td>
 						<td>'.$row['status'].'</td>
+						<td>'.$row['reason'].'</td>
 					</tr>
 				</tbody>';
 				}

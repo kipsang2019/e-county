@@ -14,13 +14,15 @@
 					<th>Location</th>
 					<th>Description</th>
 					<th>Status</th>
+					<th>Reason</th>
 					<th></th>
 					<th>Save</th>
 				</tr>
 			</thead>
 			<tbody>
+
 			<?php 
-				$sql = "SELECT first_name,Phone_number,project_name,location,descr,status,id FROM citizens,project_suggestion WHERE citizens_id=u_id";
+				$sql = "SELECT first_name,Phone_number,project_name,location,descr,status,reason,id FROM citizens,project_suggestion WHERE citizens_id=u_id ORDER BY id DESC";
 				$result = mysqli_query($conn, $sql);
 
 				while ($row = mysqli_fetch_assoc($result)) {
@@ -41,6 +43,7 @@
 									<option>Declined</option>
 								</select>
 							</td>
+							<td><textarea class="form-control" name="reason" cols="35" rows="2">'.$row['reason'].'</textarea></td>
 							<td><input type="hidden" name="id" value="'.$row['id'].'"></td>
 							<td><button class="btn btn-secondary" name="post">Save</button></td>
 						</form>
