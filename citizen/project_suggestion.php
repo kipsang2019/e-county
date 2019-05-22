@@ -34,12 +34,13 @@
 					<th>Project name</th>
 					<th>Location</th>
 					<th>Description</th>
+					<th>Date suggested</th>
 					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php 
-				$sql = "SELECT * FROM project_suggestion";
+				$sql = "SELECT * FROM project_suggestion ORDER BY id DESC LIMIT 3";
 				$result = mysqli_query($conn, $sql);
 
 				while ($row = mysqli_fetch_assoc($result)) {
@@ -47,6 +48,7 @@
 						<td>'.$row['project_name'].'</td>
 						<td>'.$row['location'].'</td>
 						<td>'.$row['descr'].'</td>
+						<td>'.$row['date'].'</td>
 						<td>'.$row['status'].'</td>
 					</tr>
 				</tbody>';
@@ -54,7 +56,7 @@
 				
 			 ?>
 		</table>
-	<a href="">more projects .....</a>
+	<a href="more_citizensproj.php">View more projects .....</a>
 	</div>
 </div>
 

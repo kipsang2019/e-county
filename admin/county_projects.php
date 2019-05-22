@@ -19,7 +19,7 @@
 			<tbody>
  		<?php 
 
- 			$sql = "SELECT project_name,project_type,contractor,project_location,status,id FROM county_projects";
+ 			$sql = "SELECT project_name,project_type,contractor,project_location,status,id FROM county_projects ORDER BY id DESC LIMIT 2";
  			$result = mysqli_query($conn, $sql);
  			while ($row = mysqli_fetch_assoc($result)) {
  				echo '<tr>
@@ -35,8 +35,10 @@
 					</tr>';
  			}
  		 ?>
+
  		 </tbody>
 		</table>
+		<a href="more_countyprojects.php">View more ........</a>
  	</div>
  	<div class="col-sm-4">
  		<h2>Add projects</h2>
