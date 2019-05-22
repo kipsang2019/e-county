@@ -15,13 +15,18 @@
 	$pdf -> SetFont('Times','B',12);
 	$pdf -> Image('../../images/COUNTY-LOGO-final.png',120,20,0,40);
 	$pdf -> Ln(50);
-	$pdf -> Cell(250,10,'COUNTY GOVERNMENT OF TRANS-NZOIA',0,1,'C');
-	$pdf -> Cell(250,10,'P.O. Box 4211-30200, Kitale, Kenya',0,1,'C');
-	$pdf -> Cell(250,10,'Email: info@transnzoia.go.ke',0,1,'C');
-	$pdf -> Cell(250,10,'Tel: (+054)30301/2',0,1,'C');
+	$pdf ->SetTextColor(24,44,77);
+	$pdf -> Cell(270,10,'COUNTY GOVERNMENT OF TRANS-NZOIA',0,1,'C');
+	$pdf -> Cell(270,10,'P.O. Box 4211-30200, Kitale, Kenya',0,1,'C');
+	$pdf -> Cell(270,10,'Email: info@transnzoia.go.ke',0,1,'C');
+	$pdf -> Cell(270,10,'Tel: (+054)30301/2',0,1,'C');
 	$pdf -> SetFont('Times','',10);
 	$pdf ->SetFillColor(180,180,180);
+	$pdf -> SetFont('Times','B',10);
+	$pdf ->SetTextColor(204,0,0);
 	$pdf -> Cell(80,10,'Citizens details',1,1,'C');
+	$pdf -> SetFont('Times','',10);
+	$pdf ->SetTextColor(24,44,77);
 	$pdf -> Cell(30,5,'Name',1,0);
 	$pdf -> Cell(50,5,$r['first_name']." ".$r['last_name'],1,1,'C');
 	$pdf -> Cell(30,5,'Email',1,0);
@@ -35,15 +40,16 @@
 	$pdf -> Cell(250,10,'County projects',1,1,'C');
 
 	$pdf -> SetFont('Times','B',10);
-	$pdf ->SetFillColor(180,180,180);
+	$pdf ->SetFillColor(209, 224, 224);
 	$pdf -> Cell(30,10,'Project name',1,0,0,'B');
 	$pdf -> Cell(30,10,'Type of project',1,0,0,'B');
 	$pdf -> Cell(30,10,'Contractor',1,0,0,'B');
 	$pdf -> Cell(40,10,'Project location',1,0,0,'B');
 	$pdf -> Cell(40,10,'Status',1,0,0,'B');
 	$pdf -> Cell(40,10,'Date',1,0,0,'B');
-	$pdf -> Cell(40,10,'Cost',1,1,0,'B');
+	$pdf -> Cell(40,10,'Cost(Ksh)',1,1,0,'B');
 	$pdf -> SetFont('Times','',10);
+	$sum = 0;
 	while ($row = mysqli_fetch_assoc($result)) {
 		$pdf -> Cell(30,10,$row['project_name'],1,0);
 		$pdf -> Cell(30,10,$row['project_type'],1,0);
@@ -52,9 +58,13 @@
 		$pdf -> Cell(40,10,$row['status'],1,0);
 		$pdf -> Cell(40,10,$row['date'],1,0);
 		$pdf -> Cell(40,10,$row['cost'],1,1);
+		$tot = $row['cost'];
+		$sum += $tot; 
 	}
+
+	$pdf -> SetFont('Times','B',10);
 	$pdf -> Cell(210,10,'Total',1,0,'C');
-	$pdf -> Cell(40,10,'',1,1,'C');
+	$pdf -> Cell(40,10,$sum,1,1);
 
 	$pdf -> output();
 

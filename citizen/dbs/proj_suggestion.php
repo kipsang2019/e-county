@@ -16,7 +16,7 @@
 			$query = "SELECT u_id FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";
 			$result = mysqli_query($conn, $query);
 			$checkResult = mysqli_num_rows($result);
-			$row = mysqli_num_rows($result);
+			$row = mysqli_fetch_assoc($result);
 			if ($checkResult > 0) {
 				$_SESSION['msg1'] = "You have already suggested ".$row['project_name'];
 				header("Location: ..\project_suggestion.php");
