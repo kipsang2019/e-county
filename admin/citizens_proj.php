@@ -15,7 +15,6 @@
 					<th>Description</th>
 					<th>Status</th>
 					<th>Reason</th>
-					<th></th>
 					<th>Save</th>
 				</tr>
 			</thead>
@@ -44,7 +43,7 @@
 								</select>
 							</td>
 							<td><textarea class="form-control" name="reason" cols="35" rows="2">'.$row['reason'].'</textarea></td>
-							<td><input type="hidden" name="id" value="'.$row['id'].'"></td>
+							<input type="hidden" name="id" value="'.$row['id'].'">
 							<td><button class="btn btn-secondary" name="post">Save</button></td>
 						</form>
 					</tr>

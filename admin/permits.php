@@ -14,7 +14,8 @@
 					<th>Business name</th>
 					<th>Area of premise</th>
 					<th>Status</th>
-					<th></th>
+					<th>Save</th>
+					<th>More</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,7 +42,7 @@
 								<option>To be considered</option>
 							</select>
 						</td>
-						<td><input type="hidden" name="u_id" value="'.$row['u_id'].'"></td>
+						<input type="hidden" name="u_id" value="'.$row['u_id'].'">
 						<td><button class="btn btn-success" name="save">Save</button></td>
 						<td><button class="btn btn-info" name="more">more</button></td>
 					</form>

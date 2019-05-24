@@ -13,7 +13,9 @@
 <div class="container">
 	
 	<div class="row">
-		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			
+		</div>
 		<div class="col-sm-4">
 			<h2 style="text-align: center;">Admin</h2>
 			<form class="form-group" action="dbs/admin_db.php" method="POST">

@@ -33,10 +33,7 @@
 				<tr>
 					<th>Project name</th>
 					<th>Location</th>
-					<th>Description</th>
-					<th>Date suggested</th>
 					<th>Status</th>
-					<th>Reason</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,10 +45,7 @@
 					echo '<tr>
 						<td>'.$row['project_name'].'</td>
 						<td>'.$row['location'].'</td>
-						<td>'.$row['descr'].'</td>
-						<td>'.$row['date'].'</td>
 						<td>'.$row['status'].'</td>
-						<td>'.$row['reason'].'</td>
 					</tr>
 				</tbody>';
 				}

@@ -13,6 +13,7 @@
 					<th>Contractor</th>
 					<th>Project location</th>
 					<th>Status</th>
+					<th>More</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,7 +29,7 @@
 						<td>'.$row['contractor'].'</td>
 						<td>'.$row['project_location'].'</td>
 						<td>'.$row['status'].'</td>
-						<td><input type="hidden" name="id" value="'.$row['id'].'"></td>
+						<input type="hidden" name="id" value="'.$row['id'].'">
 						<td><button class="btn btn-info" name="more">more</button></td>
 					</form>
 					</tr>';

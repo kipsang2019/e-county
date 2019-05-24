@@ -78,10 +78,12 @@
 								<option>On the process</option>
 								<option>Completed</option>
 								<option>Under considerations</option>
-							</select>
+							</select><br>
+							<button name="save" class="btn btn-success">Save</button>
+							<button name="delete" class="btn btn-warning">Delete</button>
 						</td>
-						<td><input type="hidden" name="id" value="'.$row['id'].'"></td>
-						<td><button name="save" class="btn btn-success">Save</button></td>
+						<input type="hidden" name="id" value="'.$row['id'].'">
+						
 					</form>
 				</tr>
 			<thead>

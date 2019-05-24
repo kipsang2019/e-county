@@ -20,14 +20,19 @@
 				<tr>
 					<th>Update</th>
 					<th>Date</th>
+					<th>Delete</th>
 				</tr>
 		<?php 
 			$sql = "SELECT * FROM county_updates ORDER BY id DESC LIMIT 4";
 			$result = mysqli_query($conn, $sql);
 			while ($row = mysqli_fetch_assoc($result)) {
 				echo '<tr>
+						<form action ="dbs/delete_updates.php" method="POST">
 						<td>'.$row['updates'].'</td>
 						<td>'.$row['date'].'</td>
+						<td><button name="delete" class="btn btn-danger">Delete</button></td>
+						<input type="hidden" name="id" value="'.$row['id'].'">
+						</form>
 					</tr>';
 			}
 
