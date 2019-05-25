@@ -58,3 +58,8 @@ table {
 th, td {
     padding: 15px;
 }
+
+/*links*/
+.navbar-header a{
+	color: red;
+}

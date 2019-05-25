@@ -11,7 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<h1 style="text-align: center;">MY COUNTY</h1>
 	
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<div class="navbar-header">
