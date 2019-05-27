@@ -12,7 +12,8 @@
 <body>
 	<div class="header">
 		<h1 style="text-align: center;">COUNTY YANGU</h1>
-	</div>
+		<img style="width: 15%; margin-left: 40%;" src="../images/COUNTY-LOGO-final.png">
+	</div><br>
 <div class="container">
 	
 	<div class="row">
@@ -38,7 +39,7 @@
 		</div>
 		<div class="col-sm-6 login">
 			<h2>Login to access the following</h2>
-			<ol>
+			<ol style="color: white;">
 				<li>Apply single business permit</li>
 				<li>Apply for the available county jobs</li>
 				<li>Submit project suggestion to county</li>
@@ -46,6 +47,7 @@
 				<li>Download citizens projects reports</li>
 				<li>view and download county projects report</li>
 				<li>View county updates and notifications</li>
+				<li>Express your views through chatting</li>
 			</ol>
 		</div>
 		

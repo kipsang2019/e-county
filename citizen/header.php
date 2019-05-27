@@ -11,9 +11,14 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<p style="background: black">.</p>
+	<p style="background: red">.</p>
+	<p style="background: green">.</p>
 	
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
 			<div class="navbar-header">
+				
 				<?php 
 				if (isset($_SESSION['id'])) {
 					echo '<ul class="navbar-nav">
