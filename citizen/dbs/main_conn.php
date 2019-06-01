@@ -37,7 +37,7 @@
 					$sql = "INSERT INTO citizens(first_name,last_name,id_no,Phone_number,email,sub_county,username,password) 
 					VALUES('$first_name','$last_name','$id_no','$Phone_number','$email','$sub_county','$username','$password')";
 					mysqli_query($conn, $sql);
-					header("Location:  ../login.php");
+					header("Location:  ../index.php");
 					exit();
 				}
 			}
@@ -62,7 +62,12 @@
 		$result = mysqli_query($conn, $sql);
 		$checkResult = mysqli_num_rows($result);
 		$row = mysqli_fetch_assoc($result);
-		if ($checkResult == 1) {
+		if ($row['account_status'] == 'Inactive') {
+			$_SESSION['msg1'] = $row['first_name']." Your account is inactive due to misconduct!!";
+			header("Location: ..\index.php");
+			exit();
+		}else{
+			if ($checkResult == 1) {
 			$_SESSION['id'] = $row['citizens_id'];
 			$_SESSION['f_name'] = $row['first_name'];
 			$_SESSION['l_name'] = $row['last_name'];
@@ -73,14 +78,16 @@
 
 			$_SESSION['msg'] = "You are logged inn!!";
 
-			header("Location: ..\index.php");
+			header("Location: ..\home.php");
 			exit();
 		}else{
 			$_SESSION['msg1'] = "Enter correct login details!!";
-			header("Location: ..\login.php");
+			header("Location: ..\index.php");
 			exit();
 		}
 	}
+		
+}
 
 
 }
@@ -89,7 +96,7 @@
 if (isset($_POST['logout'])) {
 	session_unset();
 	session_destroy();
-	header("Location: ..\login.php");
+	header("Location: ..\index.php");
 	exit();
 }
 

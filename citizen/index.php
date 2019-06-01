@@ -1,133 +1,59 @@
-<?php include 'header.php'; ?>
+<?php 
+	include 'dbs/main_conn.php';
+ ?>
 
-<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+	<div class="header">
+		<h1 style="text-align: center;">COUNTY YANGU</h1>
+		<img style="width: 15%; margin-left: 40%;" src="../images/COUNTY-LOGO-final.png">
+	</div><br>
+<div class="container">
 	
-		<div class="col-sm-4 profile">
-			<div class="row">
-				<div class="col-sm-1 profile"></div>
-				<div class="col-sm-11 profile">
-					<h4>Profile</h4>
+	<div class="row">
+
+		<div class="col-sm-6 login">
+			<h2 style="text-align: center;">Login</h2>
+			<form class="form-group" action="dbs/main_conn.php" method="POST">
+				<?php if (isset($_SESSION['msg1'])): ?>
+				<div class="alert alert-warning">
 					<strong>
-					<?php if (isset($_SESSION['msg'])): ?>
-					<div class="alert alert-success">
-						<strong>
-							<?php 
-								echo $_SESSION['f_name']." ". $_SESSION['msg'];
-								unset($_SESSION['msg']);
-							 ?>
-						</strong>
-					</div>
-					<?php endif ?><br>
-
-					<?php if (isset($_SESSION['f_name'])): ?>
-						Name:
 						<?php 
-							echo $_SESSION['f_name']." ".$_SESSION['l_name'];
+							echo $_SESSION['msg1'];
+							unset($_SESSION['msg1']);
 						 ?>
-					<?php endif ?><br>
-
-					Phone number:
-					<?php if (isset($_SESSION['p_number'])): ?>
-						<?php 
-							echo $_SESSION['p_number'];
-						 ?>
-					<?php endif ?><br>
-
-					ID number:
-					<?php if (isset($_SESSION['id_no'])): ?>
-						<?php 
-							echo $_SESSION['id_no'];
-						 ?>
-					<?php endif ?><br>
-
-					Email: 
-					<?php if (isset($_SESSION['email'])): ?>
-						<?php 
-							echo $_SESSION['email'];
-						 ?>
-					<?php endif ?><br>
-
-					Sub-county:
-					<?php if (isset($_SESSION['s_county'])): ?>
-						<?php 
-							echo $_SESSION['s_county'];
-						 ?>
-					<?php endif ?><br><br>
-					<form action="dbs/main_conn.php" method="POST">
-						<button class="btn btn-warning" name="logout">Logout</button>
-					</form>
-				</strong>
+					</strong>
 				</div>
-			</div>
-			
-	
-
-
-	
-</div>
-		<div class="col-sm-8 right">
-			<h2>Updates</h2>
-
-				<table class="table table-striped table-hover custom-table table-secondary">
-					<tbody>
-						<tr>
-							<th>Updates</th>
-							<th>Date</th>
-						</tr>
-				<?php 
-					$sql = "SELECT * FROM county_updates ORDER BY id DESC LIMIT 4";
-					$result = mysqli_query($conn, $sql);
-					while ($row = mysqli_fetch_assoc($result)) {
-						echo '<tr>
-								<td>'.$row['updates'].'</td>
-								<td>'.$row['date'].'</td>
-							</tr>';
-					}
-
-				 ?>
-					</tbody>
-				</table>
-				<a href="more_updates.php">View more updates</a>
-
-			<?php 
-				$sql = "SELECT * FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";
-				$result = mysqli_query($conn, $sql);
-
-				while ($row = mysqli_fetch_assoc($result)) {
-					if (mysqli_num_rows($result) > 0) {
-						echo '
-					<h2>Your project suggestion</h2>
-			<div class="table-responsive">
-				<table class="table table-striped table-hover custom-table table-success">
-					<thead>
-						<tr>
-							<th>Project name</th>
-							<th>Location</th>
-							<th>Description</th>
-							<th>Status</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>'.$row['project_name'].'</td>
-							<td>'.$row['location'].'</td>
-							<td>'.$row['descr'].'</td>
-							<td>'.$row['status'].'</td>
-							<td></td>
-						</tr>
-					</tbody>';
-					}else{
-						echo "You dont have notifications!!";
-					}
-					
-				}
-
-
-			 ?>
-			 </table>
-			</div>
+				<?php endif ?><br>
+				<input class="form-control" type="text" name="username" placeholder="Username"><br><br>
+				<input class="form-control" type="password" name="pwd" placeholder="Password"><br><br>
+				<button class="btn btn-primary" name="login">Login</button>
+				<p>Dont have account? <a href="signup.php">Signup</a></p>
+			</form>
 		</div>
-
+		<div class="col-sm-6 login">
+			<h2>Login to access the following</h2>
+			<ol style="color: white;">
+				<li>Apply single business permit</li>
+				<li>Apply for the available county jobs</li>
+				<li>Submit project suggestion to county</li>
+				<li>Chat with county</li>
+				<li>Download citizens projects reports</li>
+				<li>view and download county projects report</li>
+				<li>View county updates and notifications</li>
+				<li>Express your views through chatting</li>
+			</ol>
+		</div>
+		
+	</div>
+	
 </div>
-
-<?php include 'footer.php'; ?>
+	
+</body>
+</html>

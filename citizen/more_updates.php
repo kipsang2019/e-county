@@ -24,7 +24,7 @@
 				 ?>
 					</tbody>
 				</table>
-				<a href="index.php">View less updates</a>
+				<a href="home.php">View less updates</a>
 	</div>
 	<div class="col-sm-4"></div>
 </div>

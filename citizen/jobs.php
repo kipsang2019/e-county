@@ -28,7 +28,7 @@
 				<button class="btn btn-primary" name="post">Submit</button>
 			</form>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 		<h2>Job Notifications</h2>
 
 		

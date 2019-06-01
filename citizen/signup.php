@@ -29,7 +29,7 @@
 		<input class="form-control" type="text" name="first_name" placeholder="First name"><br>
 		<input class="form-control" type="text" name="last_name" placeholder="Last name"><br>
 		<input class="form-control" type="number" name="id_no" placeholder="ID number"><br>
-		<input class="form-control" type="number" name="Phone_number" placeholder="Phone number"><br>
+		<input class="form-control" type="text" name="Phone_number" placeholder="Phone number" value="+254"><br>
 		<input class="form-control" type="text" name="email" placeholder="E-mail"><br>
 		<select class="form-control" name="sub_county">
 			<option>Sub-county</option>
@@ -44,7 +44,7 @@
 		<input class="form-control" type="password" name="pwd2" placeholder="Confirm Password"><br>
 		<button class="btn btn-primary" name="submit">Submit</button>
 		<p>
-			have an account <a href="login.php">Login</a>
+			have an account <a href="index.php">Login</a>
 		</p>
 	</form>
 	</div>

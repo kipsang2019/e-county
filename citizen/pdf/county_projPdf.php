@@ -21,6 +21,8 @@
 	$pdf -> Cell(270,10,'Email: info@transnzoia.go.ke',0,1,'C');
 	$pdf -> Cell(270,10,'Tel: (+054)30301/2',0,1,'C');
 	$pdf -> SetFont('Times','',10);
+	
+		
 	$pdf -> Cell(80,10,'This is a consolidated report from the county prepaired for the county citizen below. This is just a summary. Detailed information of each project is accessible on the County Yangu system.',0,1);
 	//$pdf -> SetFillColor(180,180,180);
 	$pdf -> SetFont('Times','B',10);

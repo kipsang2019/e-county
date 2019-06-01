@@ -25,6 +25,7 @@
 							<li class="nav-item"><a class="nav-link" href="permits.php">Permits</a></li>
 							<li class="nav-item"><a class="nav-link" href="county_projects.php">county projects</a></li>
 							<li class="nav-item"><a class="nav-link" href="chat.php">discussions</a></li><br>
+							<li class="nav-item"><a class="nav-link" href="users.php">citizens</a></li><br>
 							
 						</ul>';
 				}
