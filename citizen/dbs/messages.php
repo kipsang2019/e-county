@@ -9,13 +9,13 @@
 
 		if (empty($msg)) {
 			$_SESSION['msg1'] = "Message cannot be empty!!";
-			header("Location: ..\chat.php");
+			header("Location: ..\home.php");
 			exit();
 		}else{
 			$sql = "INSERT INTO messages(msg,u_id) VALUES('$msg','$u_id')";
 			mysqli_query($conn, $sql);
 			$_SESSION['msg1'] = "Message send successfully!!";
-			header("Location: ..\chat.php");
+			header("Location: ..\home.php");
 			exit();
 		}
 	}

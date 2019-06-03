@@ -53,7 +53,7 @@
 
 		if (empty($username) || empty($pwd)) {
 			$_SESSION['msg1'] = "Fill all the details!!";
-			header("Location: ..\login.php");
+			header("Location: ..\index.php");
 			exit();
 		}else{
 		$password = sha1($pwd);

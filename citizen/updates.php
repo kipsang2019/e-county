@@ -65,9 +65,7 @@
 			 </table>
 			</div>
 		</div>
-		<div class="col-sm-6">
-			<h2>Discussion topics apears here</h2>
-		</div>
+		
 	
 </div>
 

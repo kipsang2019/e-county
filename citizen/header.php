@@ -23,8 +23,9 @@
 					<h2 style="color:white;float:right;">County E-gov</h2>
 							<li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="jobs.php">jobs</a></li>
+							<li class="nav-item"><a class="nav-link" href="permits.php">permits</a></li>
 							<li class="nav-item"><a class="nav-link" href="project_suggestion.php">project suggestion</a></li>
-							<li class="nav-item"><a class="nav-link" href="permits.php">Permits</a></li>
+							
 							<li class="nav-item"><a class="nav-link" href="county_projects.php">county projects</a></li>
 							<li class="nav-item"><a class="nav-link" href="updates.php">updates</a></li><br>
 							
