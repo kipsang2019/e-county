@@ -34,10 +34,12 @@
 					$result = mysqli_query($conn, $sql);
 					if (mysqli_num_rows($result) > 0) {
 						echo '<button class="btn btn-secondary" name="print">Print</button>';
+						echo '<button class="btn btn-success" name="renew">Renew</button>';
 					}
 				 ?>
 				
 			</form>
+			
 			
 	</div>
 	<div class="col-sm-6">

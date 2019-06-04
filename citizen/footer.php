@@ -4,7 +4,7 @@
 			<div class="footer-copyright text-center py-3">
 			<p style="color: white;">
 				&copy 2019 Copyright:
-			    <a href="https://web.facebook.com/kipsang.moses"> Kipsang' Moses.</a> All rights reserved.
+			    <a href="https://web.facebook.com/kipsang.moses.58"> Kipsang' Moses.</a> All rights reserved.
 			</p>	
 			</div>
 			</div>
