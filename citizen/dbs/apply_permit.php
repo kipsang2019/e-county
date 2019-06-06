@@ -151,7 +151,7 @@
 		echo '<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-6">
-				<table>
+				<table class="table table-striped table-hover custom-table">
 				<h2>Renew permit</h2>
 				<form action="renew_permit.php" method="POST">
 				<tr>

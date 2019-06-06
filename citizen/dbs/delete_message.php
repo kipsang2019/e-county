@@ -1,4 +1,12 @@
-<?php 
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
+
+
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		
+		<?php 
 	include 'dbcon.php';
 
 	if (isset($_POST['edit'])) {
@@ -8,10 +16,11 @@
 			$row = mysqli_fetch_assoc($result);
 			if (($_SESSION['id']) == $row['u_id']) {
 				echo '
-			<form style="margin-left:35%;padding-top:20%;" action="delete_message.php" method="POST">
+				<h2>Edit message</h2>
+			<form action="delete_message.php" method="POST">
 			 	<textarea class="form-control" cols="70" rows="8" name="msg">'.$row['msg'].'</textarea>
 			 	<input type="hidden" name="id" value="'.$row['id'].'"><br><br>
-			 	<button name="save">Save</button>
+			 	<button class="btn btn-primary" name="save">Save</button>
 			 </form>';
 			}else{
 				echo "No editing someones message";
@@ -39,4 +48,6 @@
 
 
  ?>
-
+	</div>
+	<div class="col-sm-2"></div>
+</div>

@@ -10,13 +10,12 @@
 		$result = mysqli_query($conn, $query);
 		$row = mysqli_fetch_assoc($result);
 		
-		$url ="http://techsultsms.co.ke/sms/api?action=send-sms&api_key=QnJpYW46QnJpYW5QQHNz&to=".$row['Phone_number']."&from=Techsult&sms=".$_POST['status']."";
-		die($url);
-		fopen($url, "r");
-		//$pointer = fgets($url);
-		//echo $pointer;
-		//fclose($url);
-		header("Location: ../jobs.php");
+		//$url = 'http://techsultsms.co.ke/sms/api?action=send-sms&api_key=QnJpYW46QnJpYW5QQHNz&to='.$row['Phone_number'].'&from=Techsult&sms='.$_POST['status'].' ';
+
+		//fopen($url, 'r');
+		header('Location: http://techsultsms.co.ke/sms/api?action=send-sms&api_key=QnJpYW46QnJpYW5QQHNz&to='.$row['Phone_number'].'&from=Techsult&sms='.$_POST['status'].'');
+		
+		//header("Location: ../jobs.php");
 		exit();
 	}
 	
