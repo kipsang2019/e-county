@@ -25,7 +25,7 @@
 				header("Location: ..\jobs.php");
 				exit();
 			}else{
-				move_uploaded_file($file['tmp_name'], "../../admin/uploads/". $file['name']);
+				move_uploaded_file($file['tmp_name'], "../uploads/jobApplications/". $file['name']);
 
 				$sql = "INSERT INTO job_application(job_title,course,institution,u_id) VALUES('$job_title','$course','$institution','$u_id')";
 				mysqli_query($conn, $sql);

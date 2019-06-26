@@ -61,9 +61,9 @@
 		<p>uploaded vacancies</p>
 		<?php 
 
-			$files = scandir("uploads");
+			$files = scandir("../citizen/uploads/jobApplications");
 			for ($i=2; $i < count($files); $i++) { 
-				echo '<a href="uploads/'.$files[$i].'">'.$files[$i].'</a><br><br>';
+				echo '<a href="../uploads/citizen/jobApplications/'.$files[$i].'">'.$files[$i].'</a><br><br>';
 			}
 		 ?>
 		 <a href="#">More ........</a>

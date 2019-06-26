@@ -4,7 +4,7 @@
 
  	<div class="row">
 	<div class="col-sm-1"></div>
-	<div class="col-sm-5">
+	<div class="col-sm-5 permt">
 		<h2>Single business permit</h2><br>
 			<form class="form-group" action="dbs/apply_permit.php" method="POST">
 

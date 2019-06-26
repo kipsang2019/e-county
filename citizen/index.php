@@ -31,7 +31,7 @@
 					</strong>
 				</div>
 				<?php endif ?><br>
-				<input class="form-control" type="text" name="username" placeholder="Username"><br><br>
+				<input class="form-control" type="text" name="username" placeholder="Username or E-mail"><br><br>
 				<input class="form-control" type="password" name="pwd" placeholder="Password"><br><br>
 				<button class="btn btn-primary" name="login">Login</button>
 				<p>Dont have account? <a href="signup.php">Signup</a></p>

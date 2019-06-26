@@ -1,7 +1,7 @@
 
 
 .profile{
-	background: skyblue;
+	background: grey;
 }
 
 .right{
@@ -34,7 +34,7 @@
 }
 
 .chats{
-	background: url('../../images/mountain (2).jpg');
+	background: url('../../images/Desert.jpg');
 	overflow: scroll;
 	height: 500px;
 }
@@ -61,4 +61,31 @@ th, td {
 /*links*/
 .navbar-header a{
 	color: white;
+	padding-right: 10%;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+
+.navbar-header a:hover{
+	color: maroon;
+	padding-right: 10%;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+.navbar-header ul a{
+	padding-right: 20px;
+}
+
+.dropdown a{
+	background: grey;
+}
+
+#myVideo{
+	width: 100%;
+	background-image: url('../../images/derek-thomson-292172-unsplash.jpg');
+}
+
+.permit{
+	background: skyblue;
 }

@@ -2,8 +2,8 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
 
 <?php 
-	include 'dbcon.php';
-
+	//include 'dbcon.php';
+	include '../header.php';
 	if (isset($_POST['search_btn'])) {
 
 		$search = mysqli_real_escape_string($conn, $_POST['search']);
@@ -12,9 +12,8 @@
 		$result = mysqli_query($conn, $sql);
 		$checkRecords = mysqli_num_rows($result);
 		if ($checkRecords > 0) {
-			while ($row = mysqli_fetch_assoc($result)) {
-				echo '<div>';
-					echo '<table>
+		
+			echo '<table>
 						 	<tr>
 						 		<th>Project name</th>
 						 		<th>Project type</th>
@@ -24,7 +23,10 @@
 						 		<th>Project location</th>
 						 		<th>Description</th>
 						 		<th>Status</th>
-						 	</tr>
+						 	</tr>';
+			while ($row = mysqli_fetch_assoc($result)) {
+				echo '<div>';
+					echo '
 						 	<tr>
 						 		<tbody>
 						 			<td>'.$row['project_name'].'</td>
@@ -37,10 +39,11 @@
 						 			<td>'.$row['status'].'</td>
 						 		</tbody>
 						 	</tr>
-						 </table>';
+						 ';
 					
 				echo '</div>';
 			}
+		echo '</table>';	
 		}else{
 			echo "There are no results. Make sure you use one word when searching i.e 'new' unless you are sure about what you are searching";
 

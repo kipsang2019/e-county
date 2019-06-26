@@ -13,47 +13,50 @@
  				$sql = "SELECT * FROM county_projects WHERE id='$_POST[id]'";
  				$result = mysqli_query($conn, $sql);
  				while ($row = mysqli_fetch_assoc($result)) {
- 					echo '<table class="table table-striped table-hover custom-table table-success">
+ 					echo '<table class="table table-striped table-hover custom-table table-secondary">
+ 					<form action="updates/update_countyproj.php" method="POST">
 			<thead>
 				<tr>
 					<th>Project name</th>
-					<td>'.$row['project_name'].'</td>
+					<td><input class="form-control" type="text" name="project_name" value="'.$row['project_name'].'"></td>
+
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Type of project</th>
-					<td>'.$row['project_type'].'</td>
+					<td><input class="form-control" type="text" name="project_type" value="'.$row['project_type'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Contractor</th>
-					<td>'.$row['contractor'].'</td>
+					<td><input class="form-control" type="text" name="contractor" value="'.$row['contractor'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Address</th>
-					<td>'.$row['address'].'</td>
+					<td><input class="form-control" type="text" name="address" value="'.$row['address'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Town</th>
-					<td>'.$row['town'].'</td>
+					<td><input class="form-control" type="text" name="town" value="'.$row['town'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Project location</th>
-					<td>'.$row['project_location'].'</td>
+					<td><input class="form-control" type="text" name="project_location" value="'.$row['project_location'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
 					<th>Description</th>
-					<td>'.$row['description'].'</td>
+					<td><textarea class="form-control" cols="30" rows="6" name="description">'.$row['description'].'</textarea></td>
+
 				</tr>
 			<thead>
 			<thead>
@@ -65,12 +68,12 @@
 			<thead>
 				<tr>
 					<th>Cost</th>
-					<td>'.$row['cost'].'</td>
+					<td><input class="form-control" type="text" name="cost" value="'.$row['cost'].'"></td>
 				</tr>
 			<thead>
 			<thead>
 				<tr>
-					<form action="updates/update_countyproj.php" method="POST">
+					
 						<th>Status</th>
 						<td>
 							<select class="form-control" name="status">
@@ -84,7 +87,7 @@
 						</td>
 						<input type="hidden" name="id" value="'.$row['id'].'">
 						
-					</form>
+					
 				</tr>
 			<thead>
 			<thead>
@@ -94,6 +97,7 @@
 				</tr>
 			<thead>
 			<tbody>
+			</form>
 			</table>';
  				}
  			}
