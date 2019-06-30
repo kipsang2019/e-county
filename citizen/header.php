@@ -21,8 +21,8 @@
 	<video style="width: 100%;height: 200px;" autoplay muted loop id="myVideo">
 	  <source src="../images/derek-thomson-292172-unsplash_Large1.mp4" type="video/mp4">
 	</video>-->
-	<img style="width: 50%;height: 200px;float: left" src="../images/1.jpg" alt="">
-	<img style="width: 50%;height: 200px;float: right" src="../images/Kitale-eye-unit.jpg" alt="">
+	<img style="width: 30%;height: 200px;float: left" src="../images/county3.png" alt="">
+	<img style="width: 70%;height: 200px;float: right" src="../images/1.jpg" alt="">
 	<nav class="navbar navbar-expand-sm bg-info navbar-white">
 
 			<div class="navbar-header">

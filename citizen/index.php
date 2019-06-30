@@ -12,7 +12,7 @@
 <body>
 	<div class="header">
 		<h1 style="text-align: center;">COUNTY YANGU</h1>
-		<img style="width: 15%; margin-left: 40%;" src="../images/COUNTY-LOGO-final.png">
+		<img style="width: 15%; margin-left: 40%;" src="../images/county1.png">
 	</div><br>
 <div class="container">
 	

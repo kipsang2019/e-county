@@ -24,8 +24,8 @@
 				<button class="btn btn-primary" name="post">Submit</button>
 			</form>
 	</div>
-	<div class="col-sm-8">
-		<h2>Citizens projects notifications</h2>
+	<div class="col-sm-4">
+		<h3>Other citizens' projects notifications</h3>
 
 		<table class="table table-striped table-hover custom-table table-success">
 			<a href="pdf/citizens_projects.php">Print</a>
@@ -38,7 +38,7 @@
 			</thead>
 			<tbody>
 			<?php 
-				$sql = "SELECT * FROM project_suggestion ORDER BY id DESC LIMIT 3";
+				$sql = "SELECT * FROM project_suggestion ORDER BY id DESC LIMIT 5";
 				$result = mysqli_query($conn, $sql);
 
 				while ($row = mysqli_fetch_assoc($result)) {
@@ -54,6 +54,46 @@
 		</table>
 	<a href="more_citizensproj.php">View more projects .....</a>
 	</div>
+	<div class="col-sm-4">
+		<?php 
+			$sql = "SELECT * FROM project_suggestion WHERE u_id='".$_SESSION['id']."'";
+			$result = mysqli_query($conn, $sql);
+
+			while ($row = mysqli_fetch_assoc($result)) {
+				if (mysqli_num_rows($result) > 0) {
+					echo '
+				<h3>Your project suggestion</h3>
+		<div class="table-responsive">
+			<table class="table table-striped table-hover custom-table table-success">
+				<thead>
+					<tr>
+						<th>Project name</th>
+						<th>Location</th>
+						<th>Description</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>'.$row['project_name'].'</td>
+						<td>'.$row['location'].'</td>
+						<td>'.$row['descr'].'</td>
+						<td>'.$row['status'].'</td>
+						<td></td>
+					</tr>
+				</tbody>';
+				}else{
+					echo "You dont have notifications!!";
+				}
+				
+			}
+
+
+		 ?>
+		 </table>
+		</div>
+	</div>
+	
 </div>
 
 <?php include 'footer.php'; ?>

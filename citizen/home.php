@@ -84,10 +84,6 @@
 									<button class="btn btn-primary" name="edit">Edit</button>
 									<button class="btn btn-danger" name="delete">Delete</button>
 								 </form>';
-							echo '<form action="secret_chat.php" method="POST">
-									<input type="hidden" name="id" value="'.$row['id'].'">
-									
-								 </form>';
 						echo '</div><br><br>';
 					}
 
