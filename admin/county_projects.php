@@ -20,7 +20,7 @@
 			<tbody>
  		<?php 
 
- 			$sql = "SELECT project_name,project_type,contractor,project_location,status,id FROM county_projects ORDER BY id DESC LIMIT 2";
+ 			$sql = "SELECT project_name,project_type,contractor,project_location,status,id FROM county_projects ORDER BY id DESC LIMIT 4";
  			$result = mysqli_query($conn, $sql);
  			while ($row = mysqli_fetch_assoc($result)) {
  				echo '<tr>

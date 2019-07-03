@@ -21,8 +21,8 @@
 	<video style="width: 100%;height: 200px;" autoplay muted loop id="myVideo">
 	  <source src="../images/derek-thomson-292172-unsplash_Large1.mp4" type="video/mp4">
 	</video>-->
-	<img style="width: 30%;height: 200px;float: left" src="../images/county3.png" alt="">
-	<img style="width: 70%;height: 200px;float: right" src="../images/1.jpg" alt="">
+	<img style="width: 20%;height: 200px;float: left" src="../images/county3.png" alt="">
+	<img style="width: 80%;height: 200px;float: right" src="../images/1.jpg" alt="">
 	<nav class="navbar navbar-expand-sm bg-info navbar-white">
 
 			<div class="navbar-header">
@@ -42,6 +42,7 @@
 							
 							<li class="nav-item"><a class="nav-link" href="county_projects.php">County projects</a></li>
 							<li class="nav-item"><a class="nav-link" href="updates.php">Updates</a></li><br>
+							<li class="nav-item"><a class="nav-link" href="secret_chat.php">Secret chats</a></li><br>
 							<div class="dropdown">
     
 							    <a class="nav-link" href="# dropdown-toggle" data-toggle="dropdown">'.$_SESSION['f_name'].'</a>

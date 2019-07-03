@@ -89,3 +89,15 @@ th, td {
 .permit{
 	background: skyblue;
 }
+
+.sec_chat{
+	background: gold;
+	border-radius: 10px;
+	margin-left: 20%;
+}
+
+.sec_chat1{
+	background: silver;
+	border-radius: 10px;
+	margin-left: 20%;
+}
