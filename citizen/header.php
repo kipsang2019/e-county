@@ -28,7 +28,7 @@
 	<?php 
 		
 		if (isset($_SESSION['id'])) {
-			echo '<nav class="navbar navbar-expand-lg navbar-light bg-info">
+			echo '<nav class="navbar navbar-expand-lg navbar-light bg-warning">
 			  <a class="navbar-brand" href="#">County yangu</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
