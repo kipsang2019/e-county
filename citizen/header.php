@@ -23,6 +23,7 @@
 	</video>-->
 	<img style="width: 20%;height: 200px;float: left" src="../images/county3.png" alt="">
 	<img style="width: 80%;height: 200px;float: right" src="../images/1.jpg" alt="">
+
 	
 	<?php 
 		
@@ -81,11 +82,5 @@
 			</nav>';
 		}
 
-
-	 ?>	
-
-	
-
- 
 
 	

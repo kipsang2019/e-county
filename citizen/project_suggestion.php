@@ -28,7 +28,9 @@
 		<h3>Other citizens' projects notifications</h3>
 
 		<table class="table table-striped table-hover custom-table table-success">
-			
+
+			<button class="btn btn-primary"><a style="color: white;" href="pdf/citizens_projects.php">Print</a></button>
+
 			<thead>
 				<tr>
 					<th>Project name</th>
@@ -80,6 +82,7 @@
 						<td>'.$row['location'].'</td>
 						<td>'.$row['descr'].'</td>
 						<td>'.$row['status'].'</td>
+
 					</tr>
 				</tbody>';
 				}else{
