@@ -13,7 +13,7 @@
 	$pdf = new FPDF('P','mm','A3');
 	$pdf -> AddPage();
 	$pdf -> SetFont('Times','B',12);
-	$pdf -> Image('../../images/COUNTY-LOGO-final.png',120,20,0,40);
+	$pdf -> Image('../../images/county2.png',120,20,0,40);
 	$pdf -> Ln(50);
 	//$pdf ->SetTextColor(24,44,77);
 	$pdf -> Cell(270,10,'COUNTY GOVERNMENT OF TRANS-NZOIA',0,1,'C');

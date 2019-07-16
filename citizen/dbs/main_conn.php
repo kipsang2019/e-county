@@ -1,14 +1,6 @@
 <?php 
 	include 'dbcon.php';
 
-	$first_name = '';
-	$last_name = '';
-	$id_no = '';
-	$Phone_number = '';
-	$email = '';
-	$username = '';
-	$errors = array();
-
 	if (isset($_POST['submit'])) {
 		
 		$first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
@@ -26,7 +18,17 @@
 			header("Location: ..\signup.php");
 			exit();
 		}else{
-			if (count($errors == 0)) {
+			//check if id number exists
+			$query = "SELECT * FROM citizens WHERE id_no='$id_no'";
+			$record = mysqli_query($conn, $query);
+			$resultCheck = mysqli_num_rows($record);
+			if ($resultCheck > 0) {
+				$_SESSION['msg1'] = "That ID number is taken!!";
+				header("Location: ..\signup.php");
+				exit();
+			}else{
+
+				if (count($errors == 0)) {
 				if ($pwd1 !== $pwd2) {
 					$_SESSION['msg1'] = "The two passwords dont match!!";
 					header("Location: ..\signup.php");
@@ -41,10 +43,12 @@
 					exit();
 				}
 			}
-			
 		}
-		
+			
+			
 	}
+		
+}
 
 	if (isset($_POST['login'])) {
 		
@@ -58,7 +62,7 @@
 		}else{
 		$password = sha1($pwd);
 
-		$sql = "SELECT * FROM citizens WHERE username = '$username' AND password='$password'";
+		$sql = "SELECT * FROM citizens WHERE username = '$username' OR email='$username' AND password='$password'";
 		$result = mysqli_query($conn, $sql);
 		$checkResult = mysqli_num_rows($result);
 		$row = mysqli_fetch_assoc($result);

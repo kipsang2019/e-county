@@ -8,7 +8,7 @@
 		<h2>Citizens projects notifications</h2>
 
 		<table class="table table-striped table-hover custom-table table-success">
-			<a href="pdf/citizens_projects.php">Print</a>
+			<button class="btn btn-primary"><a style="color: white;" href="pdf/citizens_projects.php">Print</a></button>
 			<thead>
 				<tr>
 					<th>Project name</th>

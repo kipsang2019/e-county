@@ -51,7 +51,6 @@
 							<td>'.$row['location'].'</td>
 							<td>'.$row['descr'].'</td>
 							<td>'.$row['status'].'</td>
-							<td></td>
 						</tr>
 					</tbody>';
 					}else{

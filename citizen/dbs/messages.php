@@ -5,19 +5,21 @@
 	if (isset($_POST['post'])) {
 		
 		$msg = mysqli_real_escape_string($conn, $_POST['msg']);
+		$m_id = mysqli_real_escape_string($conn, $_POST['m_id']);
 		$u_id = mysqli_real_escape_string($conn, $_POST['u_id']);
 
 		if (empty($msg)) {
-			$_SESSION['msg1'] = "Message cannot be empty!!";
-			header("Location: ..\home.php");
+			header("Location: ../secret_chat.php?message=empty!!");
 			exit();
 		}else{
-			$sql = "INSERT INTO messages(msg,u_id) VALUES('$msg','$u_id')";
+
+			$sql = "INSERT INTO secret_chats(sec_msg,m_id,u_id) VALUES('$msg','$m_id','$u_id')";
 			mysqli_query($conn, $sql);
-			$_SESSION['msg1'] = "Message send successfully!!";
-			header("Location: ..\home.php");
+			header("Location: ../secret_chat.php?sent=success!!");
 			exit();
 		}
+
+		
 	}
 
  ?>

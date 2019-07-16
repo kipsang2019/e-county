@@ -69,7 +69,7 @@
 			<h2 style="text-align: center; color: gold;text-shadow: 0 0 3px #FF0000, 0 0 5px white;">County Group Chat</h2><br>
 				<?php 
 
-					$sql = "SELECT citizens.first_name,citizens.sub_county,messages.msg,messages.date,messages.id FROM citizens,messages WHERE citizens.citizens_id=messages.u_id ORDER BY id DESC";
+					$sql = "SELECT citizens.citizens_id,citizens.first_name,citizens.sub_county,messages.msg,messages.date,messages.id FROM citizens,messages WHERE citizens.citizens_id=messages.u_id ORDER BY id DESC";
 					$result = mysqli_query($conn, $sql);
 
 					while ($row = mysqli_fetch_assoc($result)) {
@@ -85,8 +85,10 @@
 									<button class="btn btn-danger" name="delete">Delete</button>
 								 </form>';
 							echo '<form action="secret_chat.php" method="POST">
-									<input type="hidden" name="id" value="'.$row['id'].'">
-									
+									<input type="hidden" name="m_id" value="'.$row['id'].'">
+									<input type="hidden" name="c_id" value="'.$row['citizens_id'].'">
+									<input type="hidden" name="id" value="'.$_SESSION['id'].'">
+									<button class="btn btn-primary" name="secret_btn">Secret chat</button>
 								 </form>';
 						echo '</div><br><br>';
 					}
@@ -94,11 +96,11 @@
 				 ?>
 
 
-				<form class="form-group" action="dbs/messages.php" method="POST">
+				<form class="form-group" action="dbs/messages1.php" method="POST">
 					<?php include 'dbs/allert.php'; ?>
 					<textarea class="form-control" name="msg" cols="35" rows="6" placeholder="Concern/contribution/complain/comment"></textarea><br>
 					<input type="hidden" name="u_id" value="<?php echo $_SESSION['id'] ?>">
-					<button class="btn btn-primary" name="post">Submit</button>
+					<button class="btn btn-primary" name="post_btn">Submit</button>
 				</form>
 		</div>
 

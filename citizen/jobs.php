@@ -67,9 +67,9 @@
 
 		<?php 
 
-			$files = scandir("../admin/uploads");
+			$files = scandir("uploads/jobPosts");
 			for ($i=2; $i < count($files); $i++) { 
-				echo '<a href="../admin/uploads/'.$files[$i].'">'.$files[$i].'</a><br><br>';
+				echo '<a href="uploads/jobPosts/'.$files[$i].'">'.$files[$i].'</a><br><br>';
 			}
 		 ?>
 	</div>

@@ -43,14 +43,16 @@
 
 		$pdf = new FPDF('P','mm','A4');
 		$pdf -> AddPage();
-		$pdf -> SetFont('Times','',12);
+		$pdf -> SetFont('Times','BU',16);
 		$pdf -> Ln(10);
-		$pdf -> Cell(50,5,'County government of Trans-nzoia',0,1);
+		$pdf -> Cell(180,5,'County government of Trans-nzoia',0,1,'C');
+		$pdf -> Ln(10);
+		$pdf -> SetFont('Times','',12);
 		$pdf -> Cell(50,5,'P.O. Box 4211-30200, Kitale, Kenya',0,1);
 		$pdf -> Cell(50,5,'Email: info@transnzoia.go.ke',0,1);
 		$pdf -> Cell(50,5,'Tel: (+054)30301/2',0,1);
 		$pdf -> SetFont('Times','B',12);
-		$pdf -> Image('../../images/COUNTY-LOGO-final.png',80,30,0,40);
+		$pdf -> Image('../../images/county2.png',80,30,0,40);
 		$pdf -> Ln(40);
 		$pdf -> Cell(180,10,'Single business permit',0,1,'C');
 		$pdf -> SetFont('Times','',10);
