@@ -1,3 +1,14 @@
+<style>
+	a{
+		color: white;
+	}
+
+	body{
+		background: blue;
+	}
+
+</style>
+
 <?php 
 	include 'dbs/main_conn.php';
  ?>
@@ -21,8 +32,8 @@
 	<video style="width: 100%;height: 200px;" autoplay muted loop id="myVideo">
 	  <source src="../images/derek-thomson-292172-unsplash_Large1.mp4" type="video/mp4">
 	</video>-->
-	<img style="width: 20%;height: 200px;float: left" src="../images/county3.png" alt="">
-	<img style="width: 80%;height: 200px;float: right" src="../images/1.jpg" alt="">
+	<img style="width: 20%;height: 150px;float: left" src="../images/county3.png" alt="">
+	<img style="width: 80%;height: 150px;float: right" src="../images/1.jpg" alt="">
 	
 	<?php 
 		
