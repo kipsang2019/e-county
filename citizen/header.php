@@ -22,13 +22,15 @@
 	<video style="width: 100%;height: 200px;" autoplay muted loop id="myVideo">
 	  <source src="../images/derek-thomson-292172-unsplash_Large1.mp4" type="video/mp4">
 	</video>-->
+
 	<img style="width: 17%;height: 150px;float: left" src="../images/county3.png" alt="">
 	<img style="width: 83%;height: 150px;float: right" src="../images/1.jpg" alt="">
+
 	
 	<?php 
 		
 		if (isset($_SESSION['id'])) {
-			echo '<nav class="navbar navbar-expand-lg navbar-light bg-info">
+			echo '<nav class="navbar navbar-expand-lg navbar-light bg-warning">
 			  <a class="navbar-brand" href="#">County yangu</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
@@ -75,18 +77,12 @@
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
-			      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+			      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search projects" aria-label="Search">
 			      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="search_btn">Search</button>
 			    </form>
 			  </div>
 			</nav>';
 		}
 
-
-	 ?>	
-
-	
-
- 
 
 	
